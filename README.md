@@ -2,18 +2,14 @@
 
 EXP NO: 4	GENERATION AND DETECTION OF FM
 
-
 AIM:
 To write a program for Frequency Modulation and Demodulation using SCILAB and to observe and measure the frequency deviation and the modulation index of FM.
 
-
 EQUIPMENTS REQUIRED
-
 •	Computer with i3 Processor
 •	SCI LAB
 
 THEORY:
-
 Frequency modulation is a type of modulation in which the frequency of the high frequency (carrier) is varied in accordance with the instantaneous value of the modulating signal.
 FREQUENCY DEVIATION f and MODULATION INDEX m f :
 The frequency deviation f represents the maximum shift between the  modulatedsignal
@@ -21,7 +17,6 @@ frequency, over and under the frequency of the carrier.
 
 We define modulation index m f the ratio between f and the modulating frequency
 m= f / fm
-
 
 FREQUENCY MODULATION GENERATION:
 The circuits used to generate a frequency modulation must vary the frequency of a high frequency signal (carrier) as function of the amplitude of a low frequency signal (modulating signal). In practice there are two main methods used to generate FM.
@@ -50,7 +45,6 @@ Algorithm
 
 PROCEDURE
 
-
 •	Refer Algorithms and write code for the experiment.
 •	Open SCILAB in System
 •	Type your code in New Editor
@@ -65,25 +59,39 @@ MODEL GRAPH:
 
 
 Program
-
+```
+Am = 4.2;
+Ac=8.4;
+fm = 378;
+fc=3780;
+fs = 3780000;
+B = 4.2;
+t = 0:1/fs:2/fm;
+em = Am*cos(2*3.14*fm*t);
+subplot(3,1,1);
+plot(t,em);
+ec = Ac*cos(2*3.14*fc*t);
+subplot(3,1,2);
+plot(t,ec);
+eFM = Ac*cos((2*3.14*fc*t) + (B*sin(2*3.14*fm*t)));
+subplot(3,1,3);
+plot(t,eFM);
+```
 
 Output Waveform
-
-
+<img width="1919" height="1136" alt="image" src="https://github.com/user-attachments/assets/3c19c7bc-b004-4171-88c1-becb8b0ed11b" />
 
 Tabulation
-
-
+![WhatsApp Image 2026-03-09 at 15 17 06](https://github.com/user-attachments/assets/a958cf1c-f269-4d23-a3ad-1ef04fabf0c1)
 
 Calculation
+![WhatsApp Image 2026-03-09 at 15 18 41](https://github.com/user-attachments/assets/e35a0bd1-cae4-49ca-a873-c6cb55b76e65)
 
+Frequency Deviation Practical = 1346.8
 
+Modulation Index Practical	= 4
 
-Frequency Deviation Practical = 
-
-Modulation Index Practical	= 
-
-Modulation Index Theoretical	=
+Modulation Index Theoretical	= 4.2
 
 
 
